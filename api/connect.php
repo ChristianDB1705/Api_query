@@ -29,7 +29,25 @@ function get_movies($title){
 
     while($row = $result->fetch_assoc()){
         $movies[] = $row; 
-    }
+
+        $actors[] = $row;
+
+        $lastmovie = $movie[count($movies) - 1];
+
+        $movieId = $lastMovie['id'];
+
+        $actors_sql = "SELECT a. * FROM movie_actor ma INNER JOIN actor a ON ma.actor_id = a.id = a.id WHERE ma.movie_id = $movieId";
+
+        $actorResult = mysqli_query($conn, $actors_sql);
+            if (!$actorResult){
+                die("Error retrieving actors from movie $movieId: " .mysqli_error($conn));
+            }
+            
+            $movies[count($movies) - 1]["actors"] = array();
+            while($actorRow = mysqli_fetch_assoc($actorResult)){
+                $movies[count($movies) - 1]["actors"][] = $actorRow;
+            }
+        }
     
     $conn->close();
 

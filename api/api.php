@@ -10,7 +10,7 @@
         header('Content-Type: application/json');
         echo json_encode([
         'status' => 200,
-        'message' => 'method allowed by marco ferri',
+        'message' => 'method allowed by Christian Di Bari',
         'payload' => $movies
         ]);
     }
@@ -25,7 +25,7 @@
       header('Content-Type: application/json');
       echo json_encode([
       'status' => 200,
-      'message' => 'method allowed by marco ferri',
+      'message' => 'method allowed by Christian Di Bari',
       'payload' => $actors
       ]);
   }
@@ -39,7 +39,7 @@
     header('Content-Type: application/json');
     echo json_encode([
     'status' => 200,
-    'message' => 'method allowed by marco ferri',
+    'message' => 'method allowed by Christian Di Bari',
     'payload' => $directors
     ]);
   }
@@ -53,7 +53,7 @@
     header('Content-Type: application/json');
     echo json_encode([
     'status' => 200,
-    'message' => 'method allowed by marco ferri',
+    'message' => 'method allowed by Christian Di Bari',
     'payload' => $genres
     ]);
   }
